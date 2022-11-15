@@ -7,7 +7,7 @@
 using namespace std;
 
 /** Infrastructure minimale de test **/
-#define ASSERT(test) if (!(test)) cerr << "Test failed in file " << __FILE__ << " line " << __LINE__ << ": " #test << endl
+#define CHECK(test) if (!(test)) cerr << "Test failed in file " << __FILE__ << " line " << __LINE__ << ": " #test << endl
 
 vector<string> jours = {"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"};
 
@@ -27,9 +27,9 @@ vector<int> litTableauAnnee(string nom_fichier) {
 /** Test de la fonction litTableauAnnee **/
 void testLitTableauAnnee() {
     vector<int> t = litTableauAnnee("donnees/statistiques-des-jours-des-mariages.txt");
-    ASSERT(t[0] == 9195); // Nombre de mariages en 2010
-    ASSERT(t[3] == 9443); // Nombre de mariages en 2013
-    ASSERT(t[5] == 9046); // Nombre de mariages en 2015
+    CHECK(t[0] == 9195); // Nombre de mariages en 2010
+    CHECK(t[3] == 9443); // Nombre de mariages en 2013
+    CHECK(t[5] == 9046); // Nombre de mariages en 2015
 }
 
 /** Renvoie le numéro du jour correspondant à la chaîne de caractères
@@ -47,10 +47,10 @@ int indiceJour(string jour) {
 }
 
 void testIndiceJour() {
-    ASSERT(indiceJour("Lundi") == 0);
-    ASSERT(indiceJour("Samedi") == 5);
-    ASSERT(indiceJour("Dimanche") == 6);
-    ASSERT(indiceJour("samedi") == -1);
+    CHECK(indiceJour("Lundi") == 0);
+    CHECK(indiceJour("Samedi") == 5);
+    CHECK(indiceJour("Dimanche") == 6);
+    CHECK(indiceJour("samedi") == -1);
 }
 
 /** Construction du tableau des mariages par jour
@@ -68,9 +68,9 @@ vector<int> litTableauJours(string nom_fichier) {
 /** Test de la fonction litTableauJours **/
 void testLitTableauJours() {
     vector<int> t = litTableauJours("donnees/statistiques-des-jours-des-mariages.txt");
-    ASSERT(t[0] == 4171); // Nombre de mariages le lundi
-    ASSERT(t[3] == 4393); // Nombre de mariages le jeudi
-    ASSERT(t[6] == 2); // Nombre de mariages le dimanche
+    CHECK(t[0] == 4171); // Nombre de mariages le lundi
+    CHECK(t[3] == 4393); // Nombre de mariages le jeudi
+    CHECK(t[6] == 2); // Nombre de mariages le dimanche
 }
 
 /** Renvoie la somme d'un tableau d'entiers
@@ -84,9 +84,9 @@ int somme(vector<int> t) {
 
 /** Test de la fonction somme **/
 void testSomme() {
-    ASSERT(somme({1,2,3}) == 6);
-    ASSERT(somme({}) == 0);
-    ASSERT(somme({2,2,4,8}) == 16);
+    CHECK(somme({1,2,3}) == 6);
+    CHECK(somme({}) == 0);
+    CHECK(somme({2,2,4,8}) == 16);
 }
 
 /** Renvoie la moyenne d'un tableau d'entier
@@ -101,9 +101,9 @@ int moyenne(vector<int> t) {
 
 /** Test de la fonction moyenne **/
 void testMoyenne() {
-    ASSERT(moyenne({1,2,3}) == 2);
-    ASSERT(moyenne({1}) == 1);
-    ASSERT(moyenne({2,2,4,8}) == 4);
+    CHECK(moyenne({1,2,3}) == 2);
+    CHECK(moyenne({1}) == 1);
+    CHECK(moyenne({2,2,4,8}) == 4);
 }
 
 
@@ -118,11 +118,11 @@ int indiceMax(vector<int> t) {
 
 /** Test de la fonction IndiceMax **/
 void testIndiceMax() {
-    ASSERT(indiceMax({}) == -1);
-    ASSERT(indiceMax({1,2,3}) == 2);
-    ASSERT(indiceMax({1,3,2}) == 1);
-    ASSERT(indiceMax({1}) == 0);
-    ASSERT(indiceMax({2,8,4,4}) == 1);
+    CHECK(indiceMax({}) == -1);
+    CHECK(indiceMax({1,2,3}) == 2);
+    CHECK(indiceMax({1,3,2}) == 1);
+    CHECK(indiceMax({1}) == 0);
+    CHECK(indiceMax({2,8,4,4}) == 1);
 }
 
 /** Lance les fonctions de test puis affiche :

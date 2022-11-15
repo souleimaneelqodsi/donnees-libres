@@ -5,7 +5,7 @@
 using namespace std;
 
 /** Infrastructure minimale de test **/
-#define ASSERT(test) if (!(test)) cerr << "Test failed in file " << __FILE__ << " line " << __LINE__ << ": " #test << endl
+#define CHECK(test) if (!(test)) cerr << "Test failed in file " << __FILE__ << " line " << __LINE__ << ": " #test << endl
 
 vector<vector<string>> tableauTest = {
     { "M", "2011", "Bubulle", "3"},
@@ -22,7 +22,7 @@ void testAfficheTableau() {
 }
 
 void testMoyenne() {
-    ASSERT( moyenne(c) == 3 );
+    CHECK( moyenne(c) == 3 );
 }
 
 void testSomme() {
@@ -36,20 +36,20 @@ void testIndiceMax() {
 }
 
 void testColonne() {
-    ASSERT(colonne(tableauTest, 0) == vector<string>({"M","F","F","F"}));
-    ASSERT(colonne(tableauTest, 1) == vector<string>({"2011","2012","2011","2011"}));
-    ASSERT(colonne(tableauTest, 2) == vector<string>({"Bubulle","Bichette","Babouche","Ziboulette"}));
-    ASSERT(colonne(tableauTest, 3) == vector<string>({"3","4","7","1"}));
+    CHECK(colonne(tableauTest, 0) == vector<string>({"M","F","F","F"}));
+    CHECK(colonne(tableauTest, 1) == vector<string>({"2011","2012","2011","2011"}));
+    CHECK(colonne(tableauTest, 2) == vector<string>({"Bubulle","Bichette","Babouche","Ziboulette"}));
+    CHECK(colonne(tableauTest, 3) == vector<string>({"3","4","7","1"}));
 }
 
 void testConversionInt() {
-    ASSERT(conversionInt({}) == vector<int>({}));
-    ASSERT(conversionInt({"1","2","3"}) == vector<int>({1,2,3}));
+    CHECK(conversionInt({}) == vector<int>({}));
+    CHECK(conversionInt({"1","2","3"}) == vector<int>({1,2,3}));
 }
 
 void testSelectLignes() {
-    ASSERT(selectLignes(tableauTest, 0, "M") == vector<vector<string>>({{ "M", "2011", "Bubulle", "3"}}));
-    ASSERT(selectLignes(tableauTest, 1, "2011") == vector<vector<string>>({{ "M", "2011", "Bubulle", "3"}, { "F", "2011", "Babouche", "7"}, { "F", "2011", "Ziboulette", "1"}}));
+    CHECK(selectLignes(tableauTest, 0, "M") == vector<vector<string>>({{ "M", "2011", "Bubulle", "3"}}));
+    CHECK(selectLignes(tableauTest, 1, "2011") == vector<vector<string>>({{ "M", "2011", "Bubulle", "3"}, { "F", "2011", "Babouche", "7"}, { "F", "2011", "Ziboulette", "1"}}));
 }
 
 

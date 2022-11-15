@@ -5,7 +5,7 @@
 using namespace std;
 
 /** Infrastructure minimale de test **/
-#define ASSERT(test) if (!(test)) cerr << "Test failed in file " << __FILE__ << " line " << __LINE__ << ": " #test << endl
+#define CHECK(test) if (!(test)) cerr << "Test failed in file " << __FILE__ << " line " << __LINE__ << ": " #test << endl
 
 vector<vector<string>> tableauTest = {
     {"3", "M", "2011", "Bubulle", "3"},
@@ -17,29 +17,29 @@ vector<vector<string>> tableauTest = {
 vector<vector<string>> petites_donnees = { { "a0", "b0"}, { "a1", "b1" } };
 
 void testLitTableauCSVAvecColonnes() {
-    ASSERT( litTableauCSV("donnees/donnees-test.csv", 5) == tableauTest);
+    CHECK( litTableauCSV("donnees/donnees-test.csv", 5) == tableauTest);
     vector<vector<string>> t = litTableauCSV("donnees/liste_des_prenoms.csv", 5);
-    ASSERT(t.size() == 22994);
-    ASSERT(t[0][1] == "F");
-    ASSERT(t[4][3] == "Astrid");
-    ASSERT(t[5][4] == "12");
+    CHECK(t.size() == 22994);
+    CHECK(t[0][1] == "F");
+    CHECK(t[4][3] == "Astrid");
+    CHECK(t[5][4] == "12");
 }
 
 void testLitTableauCSVSansColonnes() {
-    ASSERT( litTableauCSV("donnees/donnees-test.csv") == tableauTest);
+    CHECK( litTableauCSV("donnees/donnees-test.csv") == tableauTest);
     vector<vector<string>> t = litTableauCSV("donnees/liste_des_prenoms.csv");
-    ASSERT(t.size() == 22994);
-    ASSERT(t[0][1] == "F");
-    ASSERT(t[4][3] == "Astrid");
-    ASSERT(t[5][4] == "12");
+    CHECK(t.size() == 22994);
+    CHECK(t[0][1] == "F");
+    CHECK(t[4][3] == "Astrid");
+    CHECK(t[5][4] == "12");
     t = litTableauCSV("donnees/statistiques-des-jours-des-mariages.csv");
-    ASSERT(t.size() == 42);
-    ASSERT(t[0].size() == 9);
-    ASSERT(t[0][0] == "2015");
-    ASSERT(t[0][1] == "Jeudi");
-    ASSERT(t[0][2] == "756.0");
-    ASSERT(t[0][3] == "");
-    ASSERT(t[0][8] == "");
+    CHECK(t.size() == 42);
+    CHECK(t[0].size() == 9);
+    CHECK(t[0][0] == "2015");
+    CHECK(t[0][1] == "Jeudi");
+    CHECK(t[0][2] == "756.0");
+    CHECK(t[0][3] == "");
+    CHECK(t[0][8] == "");
 }
 
 int main() {

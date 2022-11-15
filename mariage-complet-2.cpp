@@ -9,7 +9,7 @@
 using namespace std;
 
 /** Infrastructure minimale de test **/
-#define ASSERT(test) if (!(test)) cerr << "Test failed in file " << __FILE__ << " line " << __LINE__ << ": " #test << endl
+#define CHECK(test) if (!(test)) cerr << "Test failed in file " << __FILE__ << " line " << __LINE__ << ": " #test << endl
 
 vector<string> annees = {"2010", "2011", "2012", "2013", "2014", "2015"};
 vector<string> jours = {"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"};
@@ -31,9 +31,9 @@ vector<int> creeTableauAnnee(vector<vector<string>> data) {
 void testCreeTableauAnnee() {
     vector<vector<string>> data = litTableau("donnees/statistiques-des-jours-des-mariages.txt", 3);
     vector<int> t = creeTableauAnnee(data);
-    ASSERT(t[0] == 9195); // Nombre de mariages en 2010
-    ASSERT(t[3] == 9443); // Nombre de mariages en 2013
-    ASSERT(t[5] == 9046); // Nombre de mariages en 2015
+    CHECK(t[0] == 9195); // Nombre de mariages en 2010
+    CHECK(t[3] == 9443); // Nombre de mariages en 2013
+    CHECK(t[5] == 9046); // Nombre de mariages en 2015
 }
 
 /** Renvoie le numéro du jour correspondant à la chaîne de caractères
@@ -51,10 +51,10 @@ int indiceJour(string jour) {
 }
 
 void testIndiceJour() {
-    ASSERT(indiceJour("Lundi") == 0);
-    ASSERT(indiceJour("Samedi") == 5);
-    ASSERT(indiceJour("Dimanche") == 6);
-    ASSERT(indiceJour("samedi") == -1);
+    CHECK(indiceJour("Lundi") == 0);
+    CHECK(indiceJour("Samedi") == 5);
+    CHECK(indiceJour("Dimanche") == 6);
+    CHECK(indiceJour("samedi") == -1);
 }
 
 /** Construction du tableau des mariages à partir d'un
@@ -74,9 +74,9 @@ vector<int> creeTableauJours(vector<vector<string>> data) {
 void testCreeTableauJours() {
     vector<vector<string>> data = litTableau("donnees/statistiques-des-jours-des-mariages.txt", 3);
     vector<int> t = creeTableauJours(data);
-    ASSERT(t[0] == 4171); // Nombre de mariages le lundi
-    ASSERT(t[3] == 4393); // Nombre de mariages le jeudi
-    ASSERT(t[6] == 2); // Nombre de mariages le dimanche
+    CHECK(t[0] == 4171); // Nombre de mariages le lundi
+    CHECK(t[3] == 4393); // Nombre de mariages le jeudi
+    CHECK(t[6] == 2); // Nombre de mariages le dimanche
 }
 
 
