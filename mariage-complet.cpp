@@ -72,8 +72,7 @@ vector<int> litTableauJours(string nom_fichier) {
     int annee; string jour; int nbre;
     vector<int> tab_jours = {0, 0, 0, 0, 0, 0, 0};
     while((mariages >> annee and mariages >> jour) and mariages >> nbre){
-        if(tab_jours[indiceJour(jour)] == 0) tab_jours[indiceJour(jour)] = nbre;
-        else tab_jours[indiceJour(jour)] += nbre;
+        tab_jours[indiceJour(jour)] += nbre;
     }
     return tab_jours;
 }
