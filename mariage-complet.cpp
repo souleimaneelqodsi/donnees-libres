@@ -20,8 +20,14 @@ vector<string> jours = {"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Same
  * case d'indice i, on trouve le nombre total de mariages de l'année 2010+i
  **/
 vector<int> litTableauAnnee(string nom_fichier) {
-    // Remplacer cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction litTableauAnnee non implantée ligne 24");
+    ifstream mariages;
+    mariages.open(nom_fichier);
+    int annee; string jour; int nbre;
+    vector<int> tab_annee = {0, 0, 0, 0, 0, 0};
+    while((mariages >> annee and mariages >> jour) and mariages >> nbre){
+        tab_annee[annee-2010] += nbre;
+    }
+    return tab_annee;
 }
 
 /** Test de la fonction litTableauAnnee **/
@@ -61,8 +67,15 @@ void testIndiceJour() {
  * case d'indice i, on trouve le nombre total de mariages célébrés le jour i
  **/
 vector<int> litTableauJours(string nom_fichier) {
-    // Remplacer cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction litTableauJours non implantée ligne 65");
+    ifstream mariages;
+    mariages.open(nom_fichier);
+    int annee; string jour; int nbre;
+    vector<int> tab_jours = {0, 0, 0, 0, 0, 0, 0};
+    while((mariages >> annee and mariages >> jour) and mariages >> nbre){
+        if(tab_jours[indiceJour(jour)] == 0) tab_jours[indiceJour(jour)] = nbre;
+        else tab_jours[indiceJour(jour)] += nbre;
+    }
+    return tab_jours;
 }
 
 /** Test de la fonction litTableauJours **/
@@ -78,8 +91,11 @@ void testLitTableauJours() {
  * @return la somme des valeurs du tableau
  **/
 int somme(vector<int> t) {
-    // Remplacer cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction somme non implantée ligne 82");
+    int s = 0;
+    for(int v : t){
+        s+=v;
+    }
+    return s;
 }
 
 /** Test de la fonction somme **/
@@ -95,8 +111,7 @@ void testSomme() {
  * (on arrondit à l'entier inférieur)
  **/
 int moyenne(vector<int> t) {
-    // Remplacer cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction moyenne non implantée ligne 99");
+    return somme(t)/t.size();
 }
 
 /** Test de la fonction moyenne **/
@@ -112,8 +127,12 @@ void testMoyenne() {
  * @return l'indice de la valeur maximale ou -1 si le tableau est vide
  **/
 int indiceMax(vector<int> t) {
-    // Remplacer cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction indiceMax non implantée ligne 116");
+    if(t.size() == 0) return -1;
+    int ind = 0;
+    for(int i = 1; i < t.size() ; i++){
+        if(t[i] >= t[ind]) ind = i;
+    }
+    return ind;
 }
 
 /** Test de la fonction IndiceMax **/
@@ -133,7 +152,24 @@ void testIndiceMax() {
  * - le pourcentage de mariages célébrés un samedi
  **/
 int main() {
-    // Remplacer cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction main non implantée ligne 137");
+    // tests
+    testLitTableauAnnee();
+    testIndiceJour();
+    testLitTableauJours();
+    testSomme();
+    testMoyenne();
+    testIndiceMax();
+    
+    //affichages
+    vector<int> tab_annee = litTableauAnnee("donnees/statistiques-des-jours-des-mariages.txt");
+    vector<int> tab_jours = litTableauJours("donnees/statistiques-des-jours-des-mariages.txt");
+    double pour100sam = (tab_jours[indiceJour("Samedi")]*1./somme(tab_jours)*1.) * 100; // *1. permet de "convertir" les entiers en décimaux afin que l'opération soit possible
+    cout << "Le nombre total de mariages célébrés entre 2010 et 2015 est de " << somme(tab_annee) << endl;
+    cout << "Le nombre de mariages célébrés en moyenne par an est de " << moyenne(tab_annee) << endl;
+    cout << "L'année où l'on a célébré le plus de mariages est " << indiceMax(tab_annee) + 2010 << " avec " << tab_annee[indiceMax(tab_annee)] << " mariages" << endl;
+    cout << "Le jour de la semaine où l'on a célébré le plus de mariages est le " << jours[indiceMax(tab_jours)] <<  " avec " << tab_jours[indiceMax(tab_jours)] << " mariages" << endl;
+    cout << "Le pourcentage de mariages célébrés le samedi est de " << pour100sam << "%" << endl;
+    
+    return 0;
 }
 
