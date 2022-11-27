@@ -21,8 +21,12 @@ vector<vector<string>> tableauTest = {
  * @param tableau un tableau à deux dimensions
  **/
 void afficheTableau(vector<vector<string>> tableau) {
-    // Remplacer cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction afficheTableau non implantée ligne 25");
+    for(auto ligne:tableau){
+        for(string data:ligne){
+            cout << data << " ";
+    }
+        cout << endl;
+    }
 }
 
 void testAfficheTableau() {
@@ -37,8 +41,23 @@ void testAfficheTableau() {
  * @return un tableau de chaines de caractères à deux dimensions
  **/
 vector<vector<string>> litTableau(string nom_fichier, int nb_colonnes) {
-    // Remplacer cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction litTableau non implantée ligne 41");
+    ifstream fichier;
+    fichier.open(nom_fichier);
+    string data;
+    vector<vector<string>> tab_data;
+    while(fichier >> data){
+        vector<string> data_line;
+        data_line.push_back(data); // insertion de la première donnée, déjà lue
+        for(int colonne = 0; colonne < nb_colonnes-1 ; colonne++){
+        // on arrête à nb_colonne - 1 car on a déjà récupéré le premier élément dans la boucle while
+                fichier >> data;
+                data_line.push_back(data);
+            }
+        tab_data.push_back(data_line);
+    }
+    afficheTableau(tab_data);
+    fichier.close();
+    return tab_data;
 }
 
 /** Test de la fonction litTableau **/
@@ -57,8 +76,11 @@ void testLitTableau() {
  * @return la colonne j, représentée par un vecteur de chaines de caractères
  **/
 vector<string> colonne(vector<vector<string>> t, int j) {
-    // Remplacer cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction colonne non implantée ligne 61");
+    vector<string> colonne;
+    for(vector<string> ligne : t){
+        colonne.push_back(ligne[j]);
+    }
+    return colonne;
 }
 
 /** Test de la fonction colonne **/
@@ -88,20 +110,26 @@ void testConversionInt() {
 
 /** copier la fonction somme déjà écrite **/
 int somme(vector<int> t) {
-    // Remplacer cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction somme non implantée ligne 92");
+    int s = 0;
+    for(int v : t){
+        s+=v;
+    }
+    return s;
 }
 
 /** copier la fonction moyenne déjà écrite **/
 int moyenne(vector<int> t) {
-    // Remplacer cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction moyenne non implantée ligne 98");
+    return somme(t)/t.size();
 }
 
 /** copier la fonction indiceMax déjà écrite **/
 int indiceMax(vector<int> t) {
-    // Remplacer cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction indiceMax non implantée ligne 104");
+    if(t.size() == 0) return -1;
+    int ind = 0;
+    for(int i = 1; i < t.size() ; i++){
+        if(t[i] >= t[ind]) ind = i;
+    }
+    return ind;
 }
 
 /** Sélection des lignes d'un tableau de données
@@ -113,8 +141,14 @@ int indiceMax(vector<int> t) {
  *  que la colonne j ait la valeur correspondant au critère
  **/
 vector<vector<string>> selectLignes(vector<vector<string>> t, int j, string valeur) {
-    // Remplacer cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction selectLignes non implantée ligne 117");
+    vector<vector<string>> selected_lines;
+    auto col = colonne(t, j); // sélection de la colonne
+    for(int i = 0; i < col.size(); i++){
+        if(col[i] == valeur){
+            selected_lines.push_back(t[i]);
+        } 
+    }
+    return selected_lines;
 }
 
 /** Test de la fonction selectLignes **/
@@ -130,7 +164,51 @@ void testSelectLignes() {
  * - la meilleure année pour ce prénom pour les garçons et filles
  **/
 int main() {
-    // Remplacer cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction main non implantée ligne 134");
-}
 
+    // Tests
+    testAfficheTableau();
+    testLitTableau();
+    testColonne();
+    testConversionInt();
+    testSelectLignes();
+
+    // Tableau 2D correspondant au fichier
+    //auto fichier = litTableau("donnees/liste_des_prenoms.txt", 4);
+    //afficheTableau(fichier);   
+    
+    // Naissances
+    //cout << "Nombre total de naissances :" << somme(conversionInt(colonne(fichier, 3))) << endl;
+
+    // Entrée utilisateur
+    //string prenom; cout << "Choisissez un prénom"; cin >> prenom;
+
+    /**
+    // Collecte de données sur le prénom choisi par l'utilisateur
+    auto infos_prenom = selectLignes(fichier, 2, prenom);
+    auto nb_garcons = somme(colonne(selectLignes(infos_prenom, 0, "M"),3));
+    auto nb_filles = somme(colonne(selectLignes(infos_prenom, 0, "F"),3));
+
+    // Affichages garçons 
+    if(not nb_garcons){
+        cout << "Le prénom " << prenom << " a été donné à aucun garçon entre 2006 et 2021" << endl;
+        
+    } else {
+        cout << "Le prénom " << prenom << " a été donné à " << nb_garcons << " garçons entre 2006 et 2021" << endl;
+        cout << "L'année la plus forte est :";
+        int max_garcons = indiceMax(colonne(selectLignes(infos_prenom, 0, "M"),3));
+        
+    cout << selectLignes(infos_prenom, 0, "M")[max_garcons][1];
+    cout << " avec " << max_garcons << " enfants" << endl; }
+
+    // Affichages filles
+    if(not nb_filles){
+        cout << "Le prénom " << prenom << " a été donné à aucune fille entre 2006 et 2021" << endl;
+        
+    } else {
+        cout << "Le prénom " << prenom << " a été donné à " << nb_filles << " filles entre 2006 et 2021" << endl;
+        cout << "L'année la plus forte est :";
+        int max_filles = indiceMax(colonne(selectLignes(infos_prenom, 0, "F"),3));
+    cout << selectLignes(infos_prenom, 0, "F")[max_filles][1];
+    cout << " avec " << max_filles << " enfants" << endl;}
+    **/
+}
