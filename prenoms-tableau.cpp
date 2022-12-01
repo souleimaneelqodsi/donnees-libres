@@ -46,12 +46,12 @@ vector<vector<string>> litTableau(string nom_fichier, int nb_colonnes) {
     string data;
     vector<vector<string>> tab_data;
     while(fichier >> data){
-        vector<string> data_line;
-        data_line.push_back(data); // insertion de la première donnée, déjà lue
-        for(int colonne = 0; colonne < nb_colonnes-1 ; colonne++){
+        vector<string> data_line = vector<string>(nb_colonnes);
+        data_line[0] = data; // insertion de la première donnée, déjà lue
+        for(int colonne = 1; colonne < nb_colonnes ; colonne++){
         // on arrête à nb_colonne - 1 car on a déjà récupéré le premier élément dans la boucle while
                 fichier >> data;
-                data_line.push_back(data);
+                data_line[i] = data;
             }
         tab_data.push_back(data_line);
     }
@@ -165,11 +165,11 @@ void testSelectLignes() {
 int main() {
 
     // Tests
-    testAfficheTableau();
+    /**testAfficheTableau();
     testLitTableau();
     testColonne();
     testConversionInt();
-    testSelectLignes();
+    testSelectLignes();**/
 
     // Tableau 2D correspondant au fichier
     auto fichier = litTableau("donnees/liste_des_prenoms.txt", 4);

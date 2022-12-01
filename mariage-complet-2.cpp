@@ -14,7 +14,6 @@ using namespace std;
 vector<string> annees = {"2010", "2011", "2012", "2013", "2014", "2015"};
 vector<string> jours = {"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"};
 
-
 /** Construction du tableau des mariages par années à partir d'un
  * tableau de données 2D (de chaines de caractères)
  * Chaque ligne contient : l'année, le jour, puis le nombre de mariages

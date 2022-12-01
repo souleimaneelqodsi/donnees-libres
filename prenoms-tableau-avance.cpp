@@ -18,7 +18,7 @@ using namespace std;
  **/
 int main() {
     vector<vector<string>> data = litTableau("donnees/liste_des_prenoms.txt", 4);
-    for(auto data2:data){for(auto data3:data2){cout << data << endl;}}
+    for(auto data2:data){for(auto data3:data2){cout << data3; } cout << endl;}
     vector<int> sommeFG = groupByInt(data, {"M, F"}, 0, 3);
     cout << sommeFG.size() << endl;
     cout << "Il y'a eu " << sommeFG[0] << " naissances de garçons et " << sommeFG[1] << " naissances de filles" << endl;

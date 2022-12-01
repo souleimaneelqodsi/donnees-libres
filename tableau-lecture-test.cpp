@@ -26,5 +26,6 @@ void testLitTableau() {
 int main() {
     cout << "Lancement des tests de litTableau" << endl;
     testLitTableau();
+    return 0;
 }
 
