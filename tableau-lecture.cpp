@@ -14,9 +14,8 @@ vector<vector<string>> litTableau(string nom_fichier, int nb_colonnes) {
         vector<string> data_line = vector<string>(nb_colonnes);
         data_line[0] = data; // insertion de la première donnée, déjà lue
         for(int colonne = 1; colonne < nb_colonnes ; colonne++){
-        // on arrête à nb_colonne - 1 car on a déjà récupéré le premier élément dans la boucle while
                 fichier >> data;
-                data_line[i] = data;
+                data_line[colonne] = data;
             }
         tab_data.push_back(data_line);
     }

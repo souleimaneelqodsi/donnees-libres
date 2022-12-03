@@ -31,32 +31,40 @@ vector<double> conversionDouble(vector<string> t) {
 
 vector<int> groupByInt(vector<vector<string>> data, vector<string> valeurs, int j1, int j2) {
     vector<int> group = vector<int>(valeurs.size());
-    for(int i = 0; i < data.size(); i++){
-        for(int j = 0; j < valeurs.size(); j++){
+    for(int j = 0; j < valeurs.size(); j++){
+        for(int i = 0; i < data.size(); i++){
             if(data[i][j1] == valeurs[j]){
 
                 // conversion de la ligne actuelle en int, sinon impossible de faire une somme
                 vector<int> dataInt = vector<int>(data[i].size());
-                for(int k =0; k < data[i].size(); k++) {
+                for(int k = 0; k < data[i].size(); k++) {
                     istringstream(data[i][k]) >> dataInt[k];
                 }
                 // Il faut s'assurer que l'on additionne pas une case vide du tableau...
-                if(not group[j]) {
-                    group[j] = dataInt[j2];
-                }
-                else {
-                    group[j] += dataInt[j2];
+                if(not group[j]) group[j] = dataInt[j2];
+                else group[j] += dataInt[j2];
                 }
             }
         }
-    }
     return group;
-}
+    }
 
 vector<double> groupByDouble(vector<vector<string>> data, vector<string> valeurs, int j1, int j2) {
-    // Remplacer cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction groupByDouble non implantée ligne 29");
-}
+    vector<double> group = vector<double>(valeurs.size());
+    for(int j = 0; j < valeurs.size(); j++){
+        for(int i = 0; i < data.size(); i++){
+            if(data[i][j1] == valeurs[j]){
+
+                // conversion de la ligne actuelle en double, sinon impossible de faire une somme
+                vector<double> dataDouble = conversionDouble(data[i]);
+                // Il faut s'assurer que l'on additionne pas une case vide du tableau...
+                if(not group[j]) group[j] = dataDouble[j2];
+                else group[j] += dataDouble[j2];
+                }
+            }
+        }
+    return group;
+    }
 
 template<class T>
 vector<T> conversion(vector<string> t) {
