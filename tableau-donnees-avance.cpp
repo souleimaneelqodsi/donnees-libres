@@ -22,11 +22,11 @@ vector<string> distinct(vector<vector<string>> data, int j) {
 }
 
 vector<double> conversionDouble(vector<string> t) {
-    vector<double> res = vector<double>(t.size());
-    for(int i = 0; i < res.size(); i++){
-        istringstream(t[i]) >> res[i];
+    vector<double> resultat = vector<double>(t.size());
+    for(int i = 0; i < resultat.size(); i++){
+        istringstream(t[i]) >> resultat[i];
     }
-    return res;
+    return resultat;
 }
 
 vector<int> groupByInt(vector<vector<string>> data, vector<string> valeurs, int j1, int j2) {

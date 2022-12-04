@@ -25,7 +25,7 @@ vector<int> creeTableauAnnee(vector<vector<string>> data) {
     vector<int> tab_annees;
     tab_annees = vector<int>(6);
     for(int i = 0; i < tab_annees.size() ; i++){
-        auto new_data = selectLignes(data, 0, annees[i]);
+        vector<vector<string>> new_data = selectLignes(data, 0, annees[i]);
         tab_annees[i] = somme(conversionInt(colonne(new_data, 2)));
         }
     return tab_annees;
@@ -73,7 +73,7 @@ vector<int> creeTableauJours(vector<vector<string>> data) {
     vector<int> tab_jours;
     tab_jours = vector<int>(7);
     for(int i = 0; i < tab_jours.size() ; i++){
-        auto new_data = selectLignes(data, 1, jours[i]);
+        vector<vector<string>> new_data = selectLignes(data, 1, jours[i]);
         tab_jours[i] = somme(conversionInt(colonne(new_data, 2)));
         }
     

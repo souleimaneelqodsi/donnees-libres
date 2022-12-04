@@ -23,7 +23,7 @@ vector<int> litTableauAnnee(string nom_fichier) {
     ifstream mariages;
     mariages.open(nom_fichier);
     int annee; string jour; int nbre;
-    vector<int> tab_annee = {0, 0, 0, 0, 0, 0};
+    vector<int> tab_annee = {0, 0, 0, 0, 0, 0}; // on initialise à 0 pour pouvoir faire les sommes
     while((mariages >> annee and mariages >> jour) and mariages >> nbre){
         tab_annee[annee-2010] += nbre;
     }
@@ -71,7 +71,7 @@ vector<int> litTableauJours(string nom_fichier) {
     ifstream mariages;
     mariages.open(nom_fichier);
     int annee; string jour; int nbre;
-    vector<int> tab_jours = {0, 0, 0, 0, 0, 0, 0};
+    vector<int> tab_jours = {0, 0, 0, 0, 0, 0, 0}; // initialisation à 0 pour la même raison que dans litTableauAnnee
     while((mariages >> annee and mariages >> jour) and mariages >> nbre){
         tab_jours[indiceJour(jour)] += nbre;
     }
@@ -92,11 +92,11 @@ void testLitTableauJours() {
  * @return la somme des valeurs du tableau
  **/
 int somme(vector<int> t) {
-    int s = 0;
-    for(int v : t){
-        s+=v;
+    int somme = 0;
+    for(int valeur : t){
+        somme += valeur;
     }
-    return s;
+    return somme;
 }
 
 /** Test de la fonction somme **/

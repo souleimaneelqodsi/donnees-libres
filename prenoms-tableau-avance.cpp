@@ -22,13 +22,13 @@ int main() {
 
     cout << "Il y'a eu " << sommeFG[0] << " naissances de garçons et " << sommeFG[1] << " naissances de filles" << endl;
     cout << "L'année qui a eu le plus de naissances est : ";
-    vector<string> annees = distinct(data, 1);
-    vector<int> somme_annees = groupByInt(data, annees, 1, 3);
+    vector<string> annees = distinct(data, 1); // on crée un tableau de référence contenant les années (sans doublon)...
+    vector<int> somme_annees = groupByInt(data, annees, 1, 3); // ...afin de récupérer les sommes groupées pour chaque année
     cout << annees[indiceMax(somme_annees)] << " avec " << somme_annees[indiceMax(somme_annees)] << " naissances" << endl;
     cout << "En moyenne, naissent " << moyenne(somme_annees) << " enfants par an" << endl;
     vector<vector<string>> garcons = selectLignes(data, 0, "M");
     vector<vector<string>> filles = selectLignes(data, 0, "F");
-    vector<int> nb_filles_distinct = groupByInt(filles, distinct(filles, 2), 2, 3); // nombre de naissances pour chaque prénom féminin
+    vector<int> nb_filles_distinct = groupByInt(filles, distinct(filles, 2), 2, 3); // nombre de naissances pour chaque prénom féminin -> distinct(filles, 2) permet d'avoir une liste des prénoms féminins sans doublons, pareil pour les garçons
     vector<int> nb_garcons_distinct = groupByInt(garcons, distinct(garcons, 2), 2, 3); // nombre de naissances pour chaque prénom masculin
     cout << "Il y'a eu " << groupByInt(filles, distinct(filles, 2), 2, 3).size() << " prénoms de filles différents et " << groupByInt(garcons, distinct(garcons, 2), 2, 3).size() << " prénoms de garçons" << endl;
     cout << "Le prénom féminin le plus populaire est " << distinct(filles, 2)[indiceMax(nb_filles_distinct)] << " avec " << nb_filles_distinct[indiceMax(nb_filles_distinct)] << " naissances" << endl;

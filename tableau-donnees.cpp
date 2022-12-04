@@ -14,11 +14,11 @@ void afficheTableau(vector<vector<string>> tableau) {
 }
 
 int somme(vector<int> t) {
-    int s = 0;
-    for(int v : t){
-        s+=v;
+    int somme = 0;
+    for(int valeur : t){
+        somme += valeur;
     }
-    return s;
+    return somme;
 }
 
 int moyenne(vector<int> t) {
