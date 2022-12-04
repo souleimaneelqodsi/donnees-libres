@@ -8,6 +8,8 @@ using namespace std;
 
 /** Affiche le nombre d'arbres du genre Platanus, et le nombre d'espèces
  *  différentes pour ce genre Platanus, parmi les "arbres remarquables"
+ * Auteurs : Souleimane et Lina
+ * Bon degré de confiance en l'implantation puisqu'elle produit bien l'affichage demandé
  **/
 int main() {
     vector<vector<string>> data = litTableauCSV("donnees/arbresremarquablesparis.csv", 19);

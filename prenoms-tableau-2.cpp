@@ -11,6 +11,8 @@ using namespace std;
  * Demande à l'utilisateur un prénom et calcule
  * - le nombre de garçons et filles à qui l'on a donné ce prénom
  * - la meilleure année pour ce prénom pour les garçons et filles
+ * Auteurs : Souleimane et Lina
+ * Bon degré de confiance en l'implantation puisqu'elle produit bien l'affichage demandé
  **/
 int main() {
 

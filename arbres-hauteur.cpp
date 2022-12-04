@@ -7,6 +7,8 @@ using namespace std;
 
 /** Affiche le genre et l'espece de l'arbre le plus haut de Paris
  * parmi les "arbres remarquables"
+ * Auteurs : Souleimane et Lina
+ * Bon degré de confiance en l'implantation puisqu'elle produit bien l'affichage demandé
  **/
 int main() { 
     vector<vector<string>> data = litTableauCSV("donnees/arbresremarquablesparis.csv", 19);

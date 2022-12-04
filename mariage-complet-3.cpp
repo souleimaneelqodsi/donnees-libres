@@ -15,6 +15,8 @@ using namespace std;
  * - l'année où l'on a célébré le plus de mariages (et leur nombre)
  * - le jour de semaine où l'on célèbre le plus de mariages (et leur nombre)
  * - le pourcentage de mariages célébrés un samedi
+ * Auteurs : Souleimane et Lina
+ * Bon degré de confiance en l'implantation puisqu'elle produit bien l'affichage demandé
  **/
 int main() {
     vector<vector<string>> data = litTableau("donnees/statistiques-des-jours-des-mariages.txt", 3);

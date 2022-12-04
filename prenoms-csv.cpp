@@ -7,7 +7,9 @@
 using namespace std;
 
 /** Calcule et affiche le prénom le plus donné une année donnée
- * ainsi que le nombre de naissance cette année là **/
+ * ainsi que le nombre de naissance cette année là 
+ * Auteurs : Souleimane et Lina
+**/
 int main() {
     ifstream fichier;
     fichier.open("donnees/liste_des_prenoms.csv");

@@ -20,6 +20,8 @@ vector<string> jours = {"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Same
  * @param t un tableau de données 2D de chaines de caractère
  * @return un tableau d'entiers tel que dans chaque
  * case d'indice i, on trouve le nombre total de mariages de l'année 2010+i
+ * Auteurs : Souleimane et Lina
+ * Bon degré de confiance en l'implantation puisqu'il y'a présence de tests et la fonction a été réutilisée plusieurs fois sans problème
  **/
 vector<int> creeTableauAnnee(vector<vector<string>> data) {
     vector<int> tab_annees;
@@ -44,6 +46,8 @@ void testCreeTableauAnnee() {
  * @param jour une chaine de caractères contenant un jour de la semaine (première lettre en majuscule)
  * @return un numéro entre 0 et 6 correspondant au jour de la semaine ou
  * -1 si le jour n'est pas valide
+ * Auteurs : Souleimane et Lina
+ * Bon degré de confiance en l'implantation puisqu'il y'a présence de tests et la fonction a été réutilisée plusieurs fois sans problème
  **/
 int indiceJour(string jour) {
     for(int i=0; i < jours.size(); i++) {
@@ -68,6 +72,8 @@ void testIndiceJour() {
  * @param t un tableau de données 2D de chaines de caractère
  * @return un tableau d'entiers tel que dans chaque
  * case d'indice i, on trouve le nombre total de mariages célébrés le jour i
+ * Auteurs : Souleimane et Lina
+ * Bon degré de confiance en l'implantation puisqu'il y'a présence de tests et la fonction a été réutilisée plusieurs fois sans problème
  **/
 vector<int> creeTableauJours(vector<vector<string>> data) {
     vector<int> tab_jours;
@@ -96,6 +102,8 @@ void testCreeTableauJours() {
  * - l'année où l'on a célébré le plus de mariages (et leur nombre)
  * - le jour de la semaine où l'on célèbre le plus de mariages (et leur nombre)
  * - le pourcentage de mariages célébrés un samedi
+ * Auteurs : Souleimane et Lina
+ * Bon degré de confiance en l'implantation puisqu'elle produit bien l'affichage demandé
  **/
 int main() {
 

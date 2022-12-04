@@ -10,6 +10,8 @@ using namespace std;
  * @param valeur une chaine de caractères
  * @return renvoie l'indice de la valeur dans la chaine ou -1 si la
  *  chaine est absente
+ * Auteurs : Souleimane et Lina
+ * Bon degré de confiance en l'implantation puisqu'il y'a présence de tests et la fonction a été réutilisée plusieurs fois sans problème
  **/
 int chercheIndice(vector<string> t, string valeur);
 
@@ -18,6 +20,8 @@ int chercheIndice(vector<string> t, string valeur);
  * @param j un numéro de colonne
  * @return un tableau de chaines de caractères contenant les valeurs
  *  distinctes de la colonne j
+ * Auteurs : Souleimane et Lina
+ * Bon degré de confiance en l'implantation puisqu'il y'a présence de tests et la fonction a été réutilisée plusieurs fois sans problème
  */
 vector<string> distinct(vector<vector<string>> data, int j);
 
@@ -29,6 +33,8 @@ vector<string> distinct(vector<vector<string>> data, int j);
  * @param j2 l'indice de la colonne dont on veut faire les sommes groupées
  * @return un tableau d'entiers t tel que t[indice] contient la somme de data[i][j2]
  *  sur toutes les lignes telles que data[i][j1] == valeurs[indice]
+ * Auteurs : Souleimane et Lina
+ * Bon degré de confiance en l'implantation puisqu'il y'a présence de tests et la fonction a été réutilisée plusieurs fois sans problème
  **/
 vector<int> groupByInt(vector<vector<string>> data, vector<string> valeurs, int j1, int j2);
 
@@ -40,12 +46,16 @@ vector<int> groupByInt(vector<vector<string>> data, vector<string> valeurs, int 
  * @param j2 l'indice de la colonne dont on veut faire les sommes groupées
  * @return un tableau de double t tel que t[indice] contient la somme de data[i][j2]
  *  sur toutes les lignes telles que data[i][j1] == valeurs[indice]
+ * Auteurs : Souleimane et Lina
+ * Assez bon degré de confiance en l'implantation puisqu'il y'a présence de tests mais la fonction n'a jamais été utilisée
  **/
 vector<double> groupByDouble(vector<vector<string>> data, vector<string> valeurs, int j1, int j2);
 
 /** Conversion d'un vecteur de chaînes de caractères en vecteur de doubles
  * @param t un vecteur de chaînes de caractères
  * @return le vecteur, converti en vecteur de doubles
+ * Auteurs : Souleimane et Lina
+ * Assez bon degré de confiance en l'implantation puisqu'il y'a présence de tests mais la fonction n'a jamais été utilisée
  **/
 vector<double> conversionDouble(vector<string> t);
 

@@ -13,45 +13,39 @@ kernelspec:
 
 # Rapport de projet *Données libres*
 
-*Les paragraphes en italique comme celui-ci vous donnent des
-indications sur le contenu attendu; ils sont à supprimer une fois
-votre rapport rédigé.*
-
-*Ce rapport pourra servir de support pour votre présentation orale.*
-
-*Soyez objectifs et factuels ! Vous ne serez pas évalué sur ce que vous
-affirmez, mais sur la pertinence et la justesse de ce que vous
-affirmez.*
-
 +++
 
 ## Auteurs
 
-- Agoudjil, Lina, courriel, MI3
+- Agoudjil, Lina, lina.agoudjil@universite-paris-saclay.fr, MI3
 - El Qodsi, Souleimane, souleimane.el-qodsi@universite-paris-saclay.fr, MI4
 
-+++
++++ {"tags": [], "jp-MarkdownHeadingCollapsed": true}
 
 ## Résumé du travail effectué
 
-*Pour chaque exercice, indiquez brièvement si l'exercice a été réalisé, fonctionne, réalisé partiellement, etc. Exemple : "fichiers cpp complétés, compilent et passent les tests", "fonctions A et B complétées mais pas C", "exercice complété, le fichier compile mais erreur sur les tests de la fonction D". Décrire plus en détail les questions difficiles. Preciser et decrire les applications
-que vous avez réalisées, les difficultés qu'elles vous ont présentées, les choix
-d'implantation que vous avez fait, etc.*
-
-*En plus du rapport, la documentation de chaque fonction dans le code
-devra préciser son auteur et votre degré de confiance dans
-l'implantation et les éléments factuels motivant cette confiance:
-présence de tests, bogues et limitations connus, etc.*
-
-- Exercice 1: fichiers cpp complétés, compilent et passent les tests
-- Exercice 2: fichiers cpp complétés, compilent et passent les tests
-- Exercice 3: fichiers cpp complétés, compilent et passent les tests
-- Exercice 4: fichiers cpp complétés, compilent et passent les tests
-- Exercice 5: fichiers cpp complétés, compilent et passent les tests
-- Exercice 6:
-- Exercice 7:
-- Exercice 8:
-- Exercice 9:
+### Exercice 1
+Fichier(s) .cpp complétés, compilent et produisent l'affichage demandé.
+### Exercice 2
+Fichier(s) .cpp complétés, compilent et produisent l'affichage demandé.
+### Exercice 3
+Fichier(s) .cpp complétés, compilent et passent les tests.
+### Exercice 4
+Fichier(s) .cpp complétés, compilent et passent les tests.
+### Exercice 5
+Fichier(s) .cpp complétés, compilent et passent les tests.
+### Exercice 6
+Fichier(s) .cpp complétés, compilent et passent les tests. Ici, la question la plus difficile était sans nul doute la (4) qui demandait de compléter la fonction main() afin de produire les affichages demandés. Ces affichages nécessitaient de combiner plusieurs appels de fonctions de différentes primitives définies aux questions précédentes, notamment groupByInt et distinct, et la difficulté se trouvait dans l'usage de la bonne fonction et du bon type pour chaque affichage : la question n'a pas été réussie du premier coup...
+### Exercice 7 et exercice 8
+Fichier(s) .cpp complétés, compilent et produisent l'affichage demandé.
+La plus grande difficulté de ces exercices était de comprendre le fonctionnement de la primitive getline, qui n'est pas évident au premier abord. Cette fonction fait que la lecture d'un fichier CSV diffère fortement sur le plan syntaxique et sémantique de la lecture "classique" dans un fichier texte. Néanmoins, le principe fondamental reste le même : lecture dans un flux entrant et stockage dans une variable. Pour résoudre ces exercices, nous avons donc choisi de lire chaque ligne du fichier CSV en tant que flux et stocker cela dans une variable avec getline (avec deux paramètres formels), puis de convertir cette variable (de type string) elle-même en un flux, et enfin de lire ce flux avec getline de nouveau (avec trois paramètres formels), en spécifiant la ligne convertie en flux, une variable de parcours et le caractère séparateur (';').
+### Exercice 9
+Fichier(s) .cpp complétés, compilent et produisent l'affichage demandé.
+Pour résoudre les questions de cet exercice, nous avons utilisé la fonction de lecture dans un fichier CSV, naturellement puisque c'est le type des fichiers contenant les données à traiter. Puis nous avons eu à appeler les fonctions de tableau-donnees.cpp et tableau-donnees-avance.cpp, notamment selectLignes, conversionInt, colonne, indiceMax et distinct.
+### Exercice 11
+### Exercice 12
+### Exercice 13
+### Exercice 14
 
 +++
 
@@ -66,15 +60,25 @@ travail. Inutile de perdre du temps sur les premier niveaux si vous
 avez fait les suivants plus compliqués (on se contentera des tests automatiques)*
 
 ```{code-cell}
-! make clean
-```
-
-```{code-cell}
+---
+jupyter:
+  outputs_hidden: true
+tags: []
+---
 ! make all
 ```
 
 ```{code-cell}
+---
+jupyter:
+  outputs_hidden: true
+tags: []
+---
 ! make test
+```
+
+```{code-cell}
+// exercice 6, exercice 8, exercice 9 et exercice 11,12,13,14 ou 15
 ```
 
 ## Organisation du travail
@@ -84,6 +88,8 @@ travailler sur le projet: nombre d'heures consacrées au projet,
 répartition du travail dans le binôme, moyens mis en œuvre pour
 collaborer, etc. Si vous avez bénéficié d'aide (en dehors de celle
 de vos enseigants), précisez le.*
+
+Pour travailler sur ce projet, nous avons consacré environ une vingtaine d'heures de travail intensif. Pour travailler en binôme, nous avons combiné la programmation en binôme et la programmation côte à côte, c'est-à-dire que nous avons travaillé seul sur les exercices chacun de son côté dans un premier temps, puis dans un second temps nous avons alterné les rôles de *driver* et d'*observer* afin de : refaire le code si aucun des deux n'a réussi à résoudre l'exercice, sinon améliorer la version fonctionnelle. Cela a permis d'aller plus vite, puisqu'avant de mettre en commun, chacun avait déjà réfléchi préalablement au problème. Pour l'échange des fichiers, nous avons simplement échangé via mail, pour ensuite glisser et déposer les fichiers mis à jour (par le binôme) dans l'explorateur de fichier Jupyter, ce qui entraîne l'écrasement des fichiers obsolètes et la possibilité de déposer directement sur GitLab.
 
 +++
 

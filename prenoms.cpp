@@ -6,7 +6,10 @@
 using namespace std;
 
 /** Calcule et affiche le prénom le plus utilisé une année donnée
- * ainsi que le nombre de naissances cette année là **/
+ * ainsi que le nombre de naissances cette année là 
+ * Auteurs : Souleimane et Lina
+ * Bon degré de confiance en l'implantation puisqu'elle produit bien l'affichage demandé
+**/
 int main() {
     ifstream prenoms;
     prenoms.open("donnees/liste_des_prenoms.txt");

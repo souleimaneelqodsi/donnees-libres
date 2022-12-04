@@ -18,6 +18,8 @@ vector<string> jours = {"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Same
  * @param nom_fichier, le nom du fichier de données
  * @return un tableau d'entiers tel que dans chaque
  * case d'indice i, on trouve le nombre total de mariages de l'année 2010+i
+ * Auteurs : Souleimane et Lina
+ * Bon degré de confiance en l'implantation puisqu'il y'a présence de tests et la fonction a été réutilisée plusieurs fois sans problème
  **/
 vector<int> litTableauAnnee(string nom_fichier) {
     ifstream mariages;
@@ -43,6 +45,8 @@ void testLitTableauAnnee() {
  * @param jour une chaine de caractère contenant un jour de la semaine (première lettre en majuscule)
  * @return un numéro entre 0 et 6 correspondant au jour de la semaine ou
  * -1 si le jour n'est pas valide
+ * Auteurs : Souleimane et Lina
+ * Bon degré de confiance en l'implantation puisqu'il y'a présence de tests et la fonction a été réutilisée plusieurs fois sans problème
  **/
 int indiceJour(string jour) {
     for(int i=0; i < jours.size(); i++) {
@@ -66,6 +70,8 @@ void testIndiceJour() {
  * @param nom_fichier, le nom du fichier de données
  * @return un tableau d'entiers tel que dans chaque
  * case d'indice i, on trouve le nombre total de mariages célébrés le jour i
+ * Auteurs : Souleimane et Lina
+ * Bon degré de confiance en l'implantation puisqu'il y'a présence de tests et la fonction a été réutilisée plusieurs fois sans problème
  **/
 vector<int> litTableauJours(string nom_fichier) {
     ifstream mariages;
@@ -90,6 +96,8 @@ void testLitTableauJours() {
 /** Renvoie la somme d'un tableau d'entiers
  * @param t, un tableau d'entier
  * @return la somme des valeurs du tableau
+ * Auteurs : Souleimane et Lina
+ * Bon degré de confiance en l'implantation puisqu'il y'a présence de tests et la fonction a été réutilisée plusieurs fois sans problème
  **/
 int somme(vector<int> t) {
     int somme = 0;
@@ -110,9 +118,11 @@ void testSomme() {
  * @param t, un tableau d'entiers
  * @return la moyenne (entière) des valeurs
  * (on arrondit à l'entier inférieur)
+ * Auteurs : Souleimane et Lina
+ * Bon degré de confiance en l'implantation puisqu'il y'a présence de tests et la fonction a été réutilisée plusieurs fois sans problème
  **/
 int moyenne(vector<int> t) {
-    return somme(t)/t.size();
+    return somme(t)/t.size(); // division de deux entiers donc valeur tronquée
 }
 
 /** Test de la fonction moyenne **/
@@ -126,6 +136,8 @@ void testMoyenne() {
 /** Renvoie l'indice de la valeur maximale du tableau
  * @param t, un tableau d'entier
  * @return l'indice de la valeur maximale ou -1 si le tableau est vide
+ * Auteurs : Souleimane et Lina
+ * Bon degré de confiance en l'implantation puisqu'il y'a présence de tests et la fonction a été réutilisée plusieurs fois sans problème
  **/
 int indiceMax(vector<int> t) {
     if(t.size() == 0) return -1;
@@ -151,6 +163,8 @@ void testIndiceMax() {
  * - l'année où l'on a célébré le plus de mariages (et leur nombre)
  * - le jour de la semaine où l'on célèbre le plus de mariages (et leur nombre)
  * - le pourcentage de mariages célébrés un samedi
+ * Auteurs : Souleimane et Lina
+ * Bon degré de confiance en l'implantation puisqu'elle produit bien l'affichage demandé
  **/
 int main() {
     // tests

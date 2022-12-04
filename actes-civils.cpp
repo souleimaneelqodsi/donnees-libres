@@ -7,6 +7,8 @@
 using namespace std;
 
 /** Affiche l'année avec le plus de naissances et l'année avec le plus de mariages
+ * Auteurs : Souleimane et Lina
+ * Bon degré de confiance en l'implantation puisqu'elle produit bien l'affichage demandé
  **/
 int main() {
     vector<vector<string>> data = litTableauCSV("donnees/statistiques_de_creation_d_actes_d_etat_civil_par_arrondissement.csv", 4);

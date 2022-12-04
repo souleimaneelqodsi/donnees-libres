@@ -67,8 +67,8 @@ int main() {
     testGroupByInt();
     cout << "Lancement des tests de conversion double" << endl;
     testConversionDouble();
-    //cout << "Lancement des tests de group by (double)" << endl;
-    //testGroupByDouble();
+    cout << "Lancement des tests de group by (double)" << endl;
+    testGroupByDouble();
     //cout << "Lancement des tests de conversion (template)" << endl;
     //testConversionTemplate();
     //cout << "Lancement des tests de group by (template)" << endl;
