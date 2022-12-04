@@ -9,7 +9,11 @@ using namespace std;
 /** Affiche l'année avec le plus de naissances et l'année avec le plus de mariages
  **/
 int main() {
-    // Remplacer cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction main non implantée ligne 13");
+    vector<vector<string>> data = litTableauCSV("donnees/statistiques_de_creation_d_actes_d_etat_civil_par_arrondissement.csv", 4);
+    vector<vector<string>> lignesnaissance = selectLignes(data, 0, "Naissances");
+    int indMaxDeclarations = indiceMax(conversionInt(colonne(data, 3)));
+    string annee_max = data[indMaxDeclarations][1];
+    cout << "L'année où l'on a eu le plus de déclarations de naissance est " << annee_max << endl;
+    return 0;
 }
 

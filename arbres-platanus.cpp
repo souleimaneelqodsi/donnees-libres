@@ -10,7 +10,10 @@ using namespace std;
  *  différentes pour ce genre Platanus, parmi les "arbres remarquables"
  **/
 int main() {
-    // Remplacer cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction main non implantée ligne 14");
+    vector<vector<string>> data = litTableauCSV("donnees/arbresremarquablesparis.csv", 19);
+    vector<vector<string>> platanus = selectLignes(data, 2, "Platanus");
+    int nbre_platanus = platanus.size();
+    int nbre_especes = distinct(platanus, 3).size();
+    cout << "On a " << nbre_platanus << " arbres de genre Platanus parmi les arbres remarquables et on en compte " << nbre_especes << " espèces différentes." << endl;
 }
 
