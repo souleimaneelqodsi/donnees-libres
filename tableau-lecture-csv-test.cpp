@@ -25,7 +25,7 @@ void testLitTableauCSVAvecColonnes() {
     CHECK(t[5][4] == "12");
 }
 
-void testLitTableauCSVSansColonnes() {
+/**void testLitTableauCSVSansColonnes() {
     CHECK( litTableauCSV("donnees/donnees-test.csv") == tableauTest);
     vector<vector<string>> t = litTableauCSV("donnees/liste_des_prenoms.csv");
     CHECK(t.size() == 22994);
@@ -40,7 +40,7 @@ void testLitTableauCSVSansColonnes() {
     CHECK(t[0][2] == "756.0");
     CHECK(t[0][3] == "");
     CHECK(t[0][8] == "");
-}
+}**/
 
 int main() {
     cout << "Lecture d'un petit tableau avec litTableauCSV (avec colonnes)" << endl;
@@ -48,10 +48,10 @@ int main() {
     afficheTableau(t);
     cout << "Lancement des tests de litTableauCSVAvecColonnes" << endl;
     testLitTableauCSVAvecColonnes();
-    cout << "Lecture d'un petit tableau avec litTableauCSV (sans colonnes)" << endl;
-    t = litTableauCSV("donnees/donnees-test.csv");
-    afficheTableau(t);
-    cout << "Lancement des tests de litTableauCSVSansColonnes" << endl;
-    testLitTableauCSVSansColonnes();
+    //cout << "Lecture d'un petit tableau avec litTableauCSV (sans colonnes)" << endl;
+    //t = litTableauCSV("donnees/donnees-test.csv");
+    //afficheTableau(t);
+    //cout << "Lancement des tests de litTableauCSVSansColonnes" << endl;
+    //testLitTableauCSVSansColonnes();
 }
 
