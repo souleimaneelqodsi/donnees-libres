@@ -15,7 +15,6 @@ int main() {
     // Passage de l'entête
     string entete;
     getline(fichier, entete);
-    cout << "En tete : " << entete << endl;
     
     // variables de parcours
     string declare; string genre ; string annee_lect ; string prenom ; string nbre_total; int nbre; int annee;
