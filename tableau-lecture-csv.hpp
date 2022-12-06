@@ -17,8 +17,7 @@ vector<vector<string>> litTableauCSV(string fichier, int nb_colonnes);
  * @param fichier le nom d'un fichier contenant un nombre fixe
   * d'entiers par ligne, séparés par des espaces
  * @return un tableau d'entiers à deux dimensions
+ * Auteurs : Souleimane et Lina
+* Assez bon degré de confiance en l'implantation puisqu'il y'a présence de tests mais la fonction n'a pas été réutilisée
  **/
-//vector<vector<string>> litTableauCSV(string fichier);
-
-
-
+vector<vector<string>> litTableauCSV2(string fichier);
