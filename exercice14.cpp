@@ -26,7 +26,7 @@ int main(){
                if(conversionInt({t1[i][0].substr(0, 4)})[0] == a){ 
                     vector<string> sous_sous_tableau;
                     if (not(((((t1[i][1] == "ND") or (t1[i][2] == "ND")) or (t1[i][3] == "ND"))))){
-                      if((((t1[i][1][0] == "<") or (t1[i][2] == "<")) or (t1[i][3] == "<"))){
+                      if((((t1[i][1][0] == '<') or (t1[i][2][0] == '<')) or (t1[i][3][0] == '<'))){
                         for(int k = 1; k <= 3 ; k++){
                             t1[i][k] = t1[i][k].substr(1,1);
                         }
@@ -45,7 +45,7 @@ int main(){
         vector<int> annee_actuelle_moyennes;
         for(int k = 1 ; k <= 3 ; k++){
             annee_actuelle_moyennes.push_back(moyenne(conversionInt(colonne(annee, k))));x
-        } // problème : annee n'est pas un vector<string> 
+        } 
             moyenneschatelet.push_back(annee_actuelle_moyennes);
     }
 
