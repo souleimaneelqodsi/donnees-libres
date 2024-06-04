@@ -36,29 +36,14 @@ Fichier cpp complété, ne compile pas, présence d'erreurs (identifiées) dans 
 ## Démonstration
 
 ```{code-cell}
----
-jupyter:
-  outputs_hidden: true
-tags: []
----
 ! make all
 ```
 
 ```{code-cell}
----
-jupyter:
-  outputs_hidden: true
-tags: []
----
 ! make test
 ```
 
 ```{code-cell}
----
-jupyter:
-  outputs_hidden: true
-tags: []
----
 ! make actes-civils
 ```
 
