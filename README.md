@@ -15,7 +15,7 @@ kernelspec:
 
 ## Mentions importantes
 
-Ce projet a été réalisé **en binôme** dans le cadre du module d'introduction à la programmation impérative du 1er semestre de licence portail mathématiques-informatique à l'université Paris-Saclay. Le concepteur-auteur du sujet et de la structure du mini-projet et responsable pédagogique du module est [Nicolas Thiéry](https://nicolas.thiery.name). Les exercices ont ensuite été réalisés par Souleimane EL QODSI et Lina AGOUDJIL.
+Ce projet a été réalisé **en binôme** dans le cadre du module d'introduction à la programmation impérative du 1er semestre de licence portail mathématiques-informatique à l'université Paris-Saclay. Le concepteur-auteur du sujet et de la structure du mini-projet (ainsi que les fonctions dans le fichier ``en_cas_d_urgence_briser_la_glace.cpp`` et responsable pédagogique du module est [Nicolas Thiéry](https://nicolas.thiery.name). Les exercices ont ensuite été réalisés par Souleimane EL QODSI et Lina AGOUDJIL.
 
 +++
 
