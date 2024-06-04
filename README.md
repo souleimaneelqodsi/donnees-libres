@@ -2,7 +2,7 @@
 
 ## Mentions importantes
 
-Ce projet a été réalisé **en binôme** dans le cadre du module d'introduction à la programmation impérative du 1er semestre de licence portail mathématiques-informatique à l'université Paris-Saclay. Le concepteur-auteur du sujet et de la structure du mini-projet (ainsi que les fonctions dans le fichier ``en_cas_d_urgence_briser_la_glace.cpp`` et responsable pédagogique du module est [Nicolas Thiéry](https://nicolas.thiery.name). Les exercices ont ensuite été réalisés par Souleimane EL QODSI et Lina AGOUDJIL. Le sujet des exercices se trouve dans le fichier ``projet.pdf``. Ce projet est soumis à licence CC-BY-SA.
+Ce projet a été réalisé **en binôme** dans le cadre du module d'introduction à la programmation impérative du 1er semestre de licence portail mathématiques-informatique à l'[Université Paris-Saclay](https://www.universite-paris-saclay.fr/). Le sujet du projet et sa structure étaient fournis par l'équipe pédagogique du cours [Info111](https://nicolas.thiery.name/Enseignement/Info111/) de la [Faculté des Sciences d'Orsay](https://www.sciences.universite-paris-saclay.fr/). Les exercices ont ensuite été résolus par Souleimane EL QODSI et Lina AGOUDJIL. Le sujet des exercices se trouve dans le fichier ``projet.pdf``. Ce projet est soumis à licence CC-BY-SA.
 
 ## Auteurs
 
