@@ -1,30 +1,13 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.14.1
-kernelspec:
-  display_name: C++17
-  language: C++17
-  name: xcpp17
----
-
 # Rapport de projet *Données libres*
 
 ## Mentions importantes
 
-Ce projet a été réalisé **en binôme** dans le cadre du module d'introduction à la programmation impérative du 1er semestre de licence portail mathématiques-informatique à l'université Paris-Saclay. Le concepteur-auteur du sujet et de la structure du mini-projet (ainsi que les fonctions dans le fichier ``en_cas_d_urgence_briser_la_glace.cpp`` et responsable pédagogique du module est [Nicolas Thiéry](https://nicolas.thiery.name). Les exercices ont ensuite été réalisés par Souleimane EL QODSI et Lina AGOUDJIL. Le sujet des exercices se trouve dans le fichier ``projet.pdf``.
-
-+++
+Ce projet a été réalisé **en binôme** dans le cadre du module d'introduction à la programmation impérative du 1er semestre de licence portail mathématiques-informatique à l'université Paris-Saclay. Le concepteur-auteur du sujet et de la structure du mini-projet (ainsi que les fonctions dans le fichier ``en_cas_d_urgence_briser_la_glace.cpp`` et responsable pédagogique du module est [Nicolas Thiéry](https://nicolas.thiery.name). Les exercices ont ensuite été réalisés par Souleimane EL QODSI et Lina AGOUDJIL. Le sujet des exercices se trouve dans le fichier ``projet.pdf``. Ce projet est soumis à licence CC-BY-SA.
 
 ## Auteurs
 
 - Agoudjil, Lina, lina.agoudjil@universite-paris-saclay.fr, MI3
 - El Qodsi, Souleimane, souleimane.el-qodsi@universite-paris-saclay.fr, MI4
-
-+++ {"tags": [], "jp-MarkdownHeadingCollapsed": true}
 
 ## Résumé du travail effectué
 
@@ -49,7 +32,6 @@ Pour résoudre les questions de cet exercice, nous avons utilisé la fonction de
 ### Exercice 14
 Fichier cpp complété, ne compile pas, présence d'erreurs (identifiées) dans le code, mais non corrigé et incomplet par faute de temps (échéance des soutenances). Nous avons choisi d'implémenter l'évolution de l'air en calculant la moyenne de chaque particule fine polluante pour chaque année, puis en calculant le taux d'évolution de ces moyennes d'une année à l'autre. La difficulté majeure est donc de lire dans un fichier CSV dont les données sont disponibles sous une forme qui ne simplifie pas les choses &rarr; colonne contenant des valeurs mais à certaines heures à certains jours la donnée n'a pas été enregistrée et donc il faut gérer le cas où ce n'est pas un nombre mais une chaîne de caractères "ND" (Non défini), présence du caractère "<" devant certaines valeurs (il faut donc le retirer), année récupérable sur la première colonne mais fait partie d'une longue chaîne de caractères correspondant à la date (année, fuseau horaire, heure...) et il faut donc découper cette chaîne de caractères soit avec getline() (à trois paramètres) soit avec substr() de la bibliothèque standard C++,...etc.
 
-+++ {"tags": []}
 
 ## Démonstration
 
@@ -98,15 +80,7 @@ tags: []
 
 ## Organisation du travail
 
-*Décrire en quelques phrases comment vous vous êtes organisés pour
-travailler sur le projet: nombre d'heures consacrées au projet,
-répartition du travail dans le binôme, moyens mis en œuvre pour
-collaborer, etc. Si vous avez bénéficié d'aide (en dehors de celle
-de vos enseigants), précisez le.*
-
 Pour travailler sur ce projet, nous avons consacré environ 35 heures de travail intensif. Pour travailler en binôme, nous avons combiné la programmation en binôme et la programmation côte à côte, c'est-à-dire que nous avons travaillé seul sur les exercices chacun de son côté dans un premier temps, puis dans un second temps nous avons alterné les rôles de *driver* et d'*observer* afin de : refaire le code si aucun des deux n'a réussi à résoudre l'exercice, sinon améliorer la version fonctionnelle. Cela a permis d'aller plus vite, puisqu'avant de mettre en commun, chacun avait déjà réfléchi préalablement au problème. Pour l'échange des fichiers, nous avons échangé par mail dans un premier temps, puis nous nous sommes servis de la commande git clone (comme indiqué dans https://nicolas.thiery.name/Enseignement/Info111/collaboration.html), afin de récupérer le dossier projet et de l'un et de l'autre plus rapidement et avec moins d'erreur, puisqu'ensuite, il suffit pour le binôme de glisser les fichiers mis à jour dans son dossier Projet-DonneesLibres et enfin déposer. Quant à l'aide reçue, nous avons regardé une vidéo sur YouTube afin de mieux saisir le fonctionnement de la primitive, qui ne semblait pas clair au début.
-
-+++
 
 ## Prise de recul
 
